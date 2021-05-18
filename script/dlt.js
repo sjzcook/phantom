@@ -31,12 +31,12 @@
 【Loon】
 -----------------
 [Script]
-cron "0 30 21 * * 2,4,7" script-path=https://raw.githubusercontent.com/sjzcook/phantom/master/script/dlt.js, tag=大乐透
+cron "0 0 21 * * 1,3,6" script-path=https://raw.githubusercontent.com/sjzcook/phantom/master/script/dlt.js, tag=大乐透
 
 【Quantumult X】
 -----------------
 [task_local]
-0 30 21 * * 2,4,7  https://raw.githubusercontent.com/sjzcook/phantom/master/script/dlt.js, tag=大乐透
+0 0 21 * * 1,3,6  https://raw.githubusercontent.com/sjzcook/phantom/master/script/dlt.js, tag=大乐透
 
 【Icon】
 没找到
