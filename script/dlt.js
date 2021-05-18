@@ -82,7 +82,7 @@ function check() {
       $.data = JSON.parse(response.body);
       //var name = $.data.name;
       
-      var dltmp = $.data.value.dlt.lotteryDrawResult.split[' '];
+      var dltmp = $.data.value.dlt.lotteryDrawResult.split(' ');
       var redArr = [];
       var blueArr = [];
       for(var i = 0; i < dltmp.length; i++){
