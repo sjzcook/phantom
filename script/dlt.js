@@ -82,7 +82,7 @@ function check() {
       $.data = JSON.parse(response.body);
       //var name = $.data.name;
       
-      var dltmp = $.data.value.dlt.lotteryDrawResult.split('/\s+/');
+      var dltmp = $.data.value.dlt.lotteryDrawResult.split(/\s+/);
       var redArr = [];
       var blueArr = [];
       for(var i = 0; i < dltmp.length; i++){
@@ -93,7 +93,7 @@ function check() {
       	}
       }
 
-      var date = $.data.value.dlt.lotterySaleEndtime.split('/\s+/')[0];
+      var date = $.data.value.dlt.lotterySaleEndtime.split(/\s+/)[0];
       var detail = "红球：" + redArr.join(',') + "\n蓝球：" + blueArr.join(',');
       $.notify("大乐透开奖", date, detail);
       $.log($.data);
