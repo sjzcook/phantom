@@ -61,7 +61,7 @@ const ERR = MYERR();
   .finally(() => $.done());
 
 function check() {
-  const url = `https://www.lottery.gov.cn/tz_kj.json`;
+  const url = `https://webapi.sporttery.cn/gateway/lottery/getDigitalDrawInfoV1.qry?isVerify=1&param=85%2C0%3B35%2C0%3B350133%2C0%3B04%2C0%3B20%2C23%3B03%2C32%3B06%2C33%3B19%2C33%3B18%2C35%3B19%2C35%3B190001%2C35%3B72%2C35%3B55%2C46`;
   const headers = {
     "Accept-Encoding": `gzip, deflate`,
     Connection: `keep-alive`,
@@ -79,10 +79,10 @@ function check() {
 
   return $.http.get(myRequest).then((response) => {
     if (response.statusCode == 200) {
-      $.data = JSON.parse(response.body)[0];
+      $.data = JSON.parse(response.body);
       //var name = $.data.name;
       
-      var dltmp = $.data.dlt.numberCode;
+      var dltmp = $.data.value.dlt.lotteryDrawResult.split[' '];
       var redArr = [];
       var blueArr = [];
       for(var i = 0; i < dltmp.length; i++){
@@ -93,7 +93,7 @@ function check() {
       	}
       }
 
-      var date = dateFormat('YYYY-mm-dd', new Date());
+      var date = $.data.value.dlt.lotterySaleEndtime.split(' ')[0];
       var detail = "红球：" + redArr.join(',') + "\n蓝球：" + blueArr.join(',');
       $.notify("大乐透开奖", date, detail);
       $.log($.data);
