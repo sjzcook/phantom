@@ -68,8 +68,7 @@ function check() {
     Referer: `https://www.lottery.gov.cn/`,
     Accept: `application/json, text/javascript, */*; q=0.01`,
     "User-Agent": `Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1`,
-    "Accept-Language": `zh-cn`,
-    "X-Requested-With": `XMLHttpRequest`,
+    "Accept-Language": `zh-cn`
   };
 
   const myRequest = {
