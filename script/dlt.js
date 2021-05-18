@@ -79,7 +79,7 @@ function check() {
 
   return $.http.get(myRequest).then((response) => {
     if (response.statusCode == 200) {
-      $.data = JSON.parse(response.body).result[0];
+      $.data = JSON.parse(response.body)[0];
       //var name = $.data.name;
       
       var dltmp = $.data.dlt.numberCode;
