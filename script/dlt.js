@@ -77,7 +77,6 @@ function check() {
   };
 
   return $.http.get(myRequest).then((response) => {
-    $.log(response);
     if (response.statusCode == 200) {
       $.data = JSON.parse(response.body);
       //var name = $.data.name;
