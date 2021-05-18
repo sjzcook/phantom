@@ -26,17 +26,17 @@
 【Surge】
 -----------------
 [Script]
-双色球 = type=cron,cronexp=0 30 21 * * 2,4,7 ,script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/ssq/ssq.js
+双色球 = type=cron,cronexp=0 30 21 * * 2,4,7 ,script-path=https://raw.githubusercontent.com/sjzcook/phantom/master/script/dlt.js
 
 【Loon】
 -----------------
 [Script]
-cron "0 30 21 * * 2,4,7" script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/ssq/ssq.js, tag=大乐透
+cron "0 30 21 * * 2,4,7" script-path=https://raw.githubusercontent.com/sjzcook/phantom/master/script/dlt.js, tag=大乐透
 
 【Quantumult X】
 -----------------
 [task_local]
-0 30 21 * * 2,4,7  https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/ssq/ssq.js, tag=大乐透
+0 30 21 * * 2,4,7  https://raw.githubusercontent.com/sjzcook/phantom/master/script/dlt.js, tag=大乐透
 
 【Icon】
 没找到
@@ -122,7 +122,6 @@ function dateFormat(fmt, date) {
         "H+": date.getHours().toString(),           // 时
         "M+": date.getMinutes().toString(),         // 分
         "S+": date.getSeconds().toString()          // 秒
-        // 有其他格式化字符需求可以继续添加，必须转化成字符串
     };
     for (let k in opt) {
         ret = new RegExp("(" + k + ")").exec(fmt);
