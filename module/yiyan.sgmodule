@@ -1,0 +1,10 @@
+#!name=一言Panel
+#!desc=随机展示一段文字
+
+# 这个模块是根据hitokoto的，详细说明查看https://developer.hitokoto.cn/sentence/#%E7%AE%80%E4%BB%8B
+
+[Panel]
+每日一言 = script-name=yiyan,title=每日一言,content=请刷新,update-interval=600
+
+[Script]
+yiyan = type=generic,timeout=5,script-path=https://raw.githubusercontent.com/sjzcook/phantom/master/script/yiyan.js
