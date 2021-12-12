@@ -8,7 +8,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-开屏页');
     if (body.Data == undefined || body.Data.List == undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点", "Data/List字段为undefined")
+        sendNotice(notifiTitle, "起点", "Data/List字段为undefined")
     } else {
         body.Data.List = null;
         console.log('成功')
@@ -17,7 +17,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-不跳转精选');
     if (body.Data == undefined || body.Data.ActionUrl == undefined || body.Data.ActionUrl != 'QDReader://Bookstore') {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点", "Data/ActionUrl字段为undefined或者不为QDReader://Bookstore")
+        sendNotice(notifiTitle, "起点", "Data/ActionUrl字段为undefined或者不为QDReader://Bookstore")
     } else {
         body.Data = null;
         console.log('成功')
@@ -26,7 +26,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-iOS_tab');
     if (body.Data === undefined || body.Data.iOS_tab === undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点-iOS_tab", "Data/iOS_tab字段为undefined")
+        sendNotice(notifiTitle, "起点-iOS_tab", "Data/iOS_tab字段为undefined")
     } else {
         if (body.Data.iOS_tab.length == 0) {
             console.log('返回配置空')
@@ -47,18 +47,18 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-getconf');
     if (body.Data === undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点-getconf", "Data字段为undefined")
+        sendNotice(notifiTitle, "起点-getconf", "Data字段为undefined")
     } else {
         if (body.Data.ActivityPopup === undefined || body.Data.ActivityPopup.Data == undefined) {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "ActivityPopup/Data字段为undefined")
+            sendNotice(notifiTitle, "起点-getconf", "ActivityPopup/Data字段为undefined")
         } else {
             body.Data.ActivityPopup = null;
             console.log('ActivityPopup(活动弹窗)成功')
         }
         if (body.Data.ActivityIcon === undefined || body.Data.ActivityIcon.Type !== 0) {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "ActivityIcon/Type字段错误")
+            sendNotice(notifiTitle, "起点-getconf", "ActivityIcon/Type字段错误")
         } else {
             if (body.Data.ActivityIcon.EndTime === 0) {
                 console.log('无ActivityIcon配置')
@@ -72,7 +72,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
         }
         if (body.Data.EnableSearchUser === undefined || body.Data.EnableSearchUser != "0") {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "EnableSearchUser字段错误")
+            sendNotice(notifiTitle, "起点-getconf", "EnableSearchUser字段错误")
         } else {
             body.Data.EnableSearchUser = "1";
             console.log('允许搜索用户成功')
@@ -86,15 +86,27 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
             }
         } else {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "EnableClipboardReading字段错误")
+            sendNotice(notifiTitle, "起点-getconf", "EnableClipboardReading字段错误")
         }
     }
+} else if(url.indexOf("magev6.if.qidian.com/argus/api/v1/booksearch/getsearchpage") != -1 && method == postMethod){
+    console.log("起点搜索页");
+    if (body.Data === undefined) {
+        console.log("body:" + $response.body);
+        sendNotice(notifiTitle, "起点搜索", "Data字段错误")
+    } else {
+        body.Data.BookRankData = {};
+        body.Data.RecommendData = {};
+        body.Data.TagRankData = {};
+        console.log('成功')
+    }
+
 } else if (url.indexOf("api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk") != -1 && method == postMethod) {
     console.log('穿山甲-get_ads');
     if (body.message === undefined) {
         console.log("body:" + $response.body);
         if (body.status_code === undefined) {
-            $notification.post(notifiTitle, "穿山甲", "message/status_code字段错误")
+            sendNotice(notifiTitle, "穿山甲", "message/status_code字段错误")
         } else {
             console.log('广告为空')
         }
@@ -106,7 +118,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('vgtime-开屏页');
     if (body.data == undefined || body.data.ad === undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "vgtime", "data/ad字段为undefined")
+        sendNotice(notifiTitle, "vgtime", "data/ad字段为undefined")
     } else {
         body.data.ad = null;
         console.log('成功')
@@ -123,7 +135,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('qq音乐-开屏页');
     if (body.data === undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "qq音乐-开屏页", "data字段错误")
+        sendNotice(notifiTitle, "qq音乐-开屏页", "data字段错误")
     } else {
         let dataObj = body.data;
         let count = 0;
@@ -132,7 +144,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
             for (let i = 0; i < listObj.length; i++) {
                 if (listObj[i].is_empty === undefined) {
                     console.log("body:" + $response.body);
-                    $notification.post(notifiTitle, "qq音乐-开屏", "is_empty字段错误");
+                    sendNotice(notifiTitle, "qq音乐-开屏", "is_empty字段错误");
                     break
                 }
                 if (listObj[i].is_empty === 0) {
@@ -144,7 +156,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
         console.log('成功count:' + count)
     }
 } else {
-    $notification.post(notifiTitle, "路径/请求方法匹配错误:", method + "," + url)
+    sendNotice(notifiTitle, "路径/请求方法匹配错误:", method + "," + url)
 }
 body = JSON.stringify(body);
 $done({
@@ -166,13 +178,13 @@ function zhihuAds(body, name) {
     let launch;
     if (body.launch == undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, name, "launch字段为undefined")
+        sendNotice(notifiTitle, name, "launch字段为undefined")
     } else {
         launch = JSON.parse(body.launch)
     }
     if (launch.ads === undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, name, "launch-ads字段为undefined")
+        sendNotice(notifiTitle, name, "launch-ads字段为undefined")
     } else {
         launch.ads = [];
         console.log('成功')
@@ -192,13 +204,28 @@ function getUrlParamValue(url, queryName) {
                 }
             } else {
                 console.log('url:' + url);
-                $notification.post(notifiTitle, '获取url参数', "pair错误")
+                sendNotice(notifiTitle, '获取url参数', "pair错误")
             }
         }
     } else {
         console.log('url:' + url);
-        $notification.post(notifiTitle, '获取url参数', "i错误");
+        sendNotice(notifiTitle, '获取url参数', "i错误");
         return null
     }
     return null
+}
+
+function sendNotice(title, subTitle, content){
+    let isQX = typeof $task !== "undefined";
+    let isLoon = typeof $loon !== "undefined";
+    let isSurge = typeof $httpClient !== "undefined" && !isLoon;
+    if(isQX){
+        $notify(title, subTitle, content, {});
+    }
+    if(isSurge){
+        $notification.post(notifiTitle, subTitle, content);
+    }
+    if(isLoon){
+        $notification.post(title, subTitle, content);
+    }
 }
