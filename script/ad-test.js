@@ -89,6 +89,18 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
             sendNotice(notifiTitle, "起点-getconf", "EnableClipboardReading字段错误")
         }
     }
+} else if(url.indexOf("magev6.if.qidian.com/argus/api/v1/booksearch/getsearchpage") != -1 && method == postMethod){
+    console.log("起点搜索页");
+    if (body.Data === undefined) {
+        console.log("body:" + $response.body);
+        sendNotice(notifiTitle, "起点搜索", "Data字段错误")
+    } else {
+        body.Data.BookRankData = null;
+        body.Data.RecommendData = null;
+        body.Data.TagRankData = null;
+        console.log('成功')
+    }
+
 } else if (url.indexOf("api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk") != -1 && method == postMethod) {
     console.log('穿山甲-get_ads');
     if (body.message === undefined) {
