@@ -205,7 +205,7 @@ function getUrlParamValue(url, queryName) {
 
 function sendNotice(title, subTitle, content){
     let isQX = typeof $task !== "undefined";
-    // let isLoon = typeof $loon !== "undefined";
+    let isLoon = typeof $loon !== "undefined";
     let isSurge = typeof $httpClient !== "undefined" && !isLoon;
     if(isQx){
         $notify(title, subtitle, content, {});
