@@ -208,12 +208,12 @@ function sendNotice(title, subTitle, content){
     let isLoon = typeof $loon !== "undefined";
     let isSurge = typeof $httpClient !== "undefined" && !isLoon;
     if(isQX){
-        $notify(title, subtitle, content, {});
+        $notify(title, subTitle, content, {});
     }
     if(isSurge){
         $notification.post(notifiTitle, subTitle, content);
     }
     if(isLoon){
-        $notification.post(title, subtitle, content);
+        $notification.post(title, subTitle, content);
     }
 }
