@@ -95,9 +95,9 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
         console.log("body:" + $response.body);
         sendNotice(notifiTitle, "起点搜索", "Data字段错误")
     } else {
-        body.Data.BookRankData = null;
-        body.Data.RecommendData = null;
-        body.Data.TagRankData = null;
+        body.Data.BookRankData = {};
+        body.Data.RecommendData = {};
+        body.Data.TagRankData = {};
         console.log('成功')
     }
 
