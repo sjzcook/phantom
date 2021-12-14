@@ -1,0 +1,66 @@
+{
+    "name": "chaiziaIcon",
+    "description": "by chaizia",
+    "icons": [
+        {
+            "name": "Final",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Final.png"
+        },
+        {
+            "name": "Netflix",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Netflix.png"
+        },
+        {
+            "name": "Nex",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Nex.png"
+        },
+        {
+            "name": "Roundrobin",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Roundrobin.png"
+        },
+        {
+            "name": "Static",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Static.png"
+        },
+        {
+            "name": "Telegram",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Telegram.png"
+        },
+        {
+            "name": "Twitter",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Twitter.png"
+        },
+        {
+            "name": "Urltest",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/Urltest.png"
+        },
+        {
+            "name": "YouTube",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/YouTube.png"
+        },
+        {
+            "name": "disney",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/disney.png"
+        },
+        {
+            "name": "hutao",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/hutao.png"
+        },
+        {
+            "name": "naiko",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/naiko.png"
+        },
+        {
+            "name": "paofu",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/paofu.png"
+        },
+        {
+            "name": "renzhe",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/renzhe.png"
+        },
+        {
+            "name": "suwa",
+            "url": "https://github.com/chaizia/Profiles/raw/master/faviconico/suwa.png"
+        }
+    ]
+}
