@@ -43,7 +43,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-开屏页');
     if (body.Data == undefined || body.Data.List == undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点", "Data/List字段为undefined");
+        
     } else {
         body.Data.List = null;
         console.log('成功');
@@ -52,7 +52,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-不跳转精选');
     if (body.Data == undefined || body.Data.ActionUrl == undefined || body.Data.ActionUrl != 'QDReader://Bookstore') {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点", "Data/ActionUrl字段为undefined或者不为QDReader://Bookstore");
+        
     } else {
         body.Data = null;
         console.log('成功');
@@ -61,7 +61,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-iOS_tab');
     if (body.Data === undefined || body.Data.iOS_tab === undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点-iOS_tab", "Data/iOS_tab字段为undefined");
+        
     } else {
         if (body.Data.iOS_tab.length == 0) {
             console.log('返回配置空');
@@ -83,12 +83,12 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
     console.log('起点-getconf');
     if (body.Data === undefined) {
         console.log("body:" + $response.body);
-        $notification.post(notifiTitle, "起点-getconf", "Data字段为undefined");
+       
     } else {
         // 精选 和 发现 中间的活动配置
         if (body.Data.ActivityPopup === undefined || body.Data.ActivityPopup.Data == undefined) {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "ActivityPopup/Data字段为undefined");
+            
         } else {
             body.Data.ActivityPopup = null;
             console.log('ActivityPopup(活动弹窗)成功');
@@ -97,7 +97,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
         // QDReader://Bookshelf 书架右下角悬浮活动
         if (body.Data.ActivityIcon === undefined || body.Data.ActivityIcon.Type !== 0) {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "ActivityIcon/Type字段错误");
+            
         } else {
             // 无活动icon的情况下为{"EndTime":0,"StartTime":0,"Type":0}
             if (body.Data.ActivityIcon.EndTime === 0) {
@@ -114,7 +114,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
         // 功能增强:搜索页可以搜索用户
         if (body.Data.EnableSearchUser === undefined || body.Data.EnableSearchUser != "0") {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "EnableSearchUser字段错误");
+            
         } else {
             body.Data.EnableSearchUser = "1";
             console.log('允许搜索用户成功');
@@ -129,7 +129,7 @@ if (url.indexOf("magev6.if.qidian.com/argus/api/v4/client/getsplashscreen") != -
             }
         } else {
             console.log("body:" + $response.body);
-            $notification.post(notifiTitle, "起点-getconf", "EnableClipboardReading字段错误");
+            
         }
         // QDReader://UserCenter   我
         // QDReader://Bookshelf    书架
